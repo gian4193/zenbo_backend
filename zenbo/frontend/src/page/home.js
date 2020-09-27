@@ -1,9 +1,9 @@
 import { Form, Input, Button, Checkbox } from 'antd';
-import { Route, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios';
-import { SuccessLogin } from './after_login/success_login';
+
 
 
 const layout = {
@@ -51,7 +51,6 @@ export const Home = () => {
                     Submit
                 </Button>
             </Form.Item  >
-            <Route path='/success_login' component={SuccessLogin}></Route>
         </Form>
 
     )

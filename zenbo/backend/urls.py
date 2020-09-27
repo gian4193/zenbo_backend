@@ -7,4 +7,5 @@ urlpatterns = [
     path('upload_temperature/',views.upload_temperature),
     path('update_room_patient/',views.update_room_patient),
     path('validate_login/',views.validate_login),
+    path('get_patient_temperature/',views.get_patient_temperature)
 ]

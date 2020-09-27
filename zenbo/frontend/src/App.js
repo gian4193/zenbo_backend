@@ -1,13 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Home } from './page/home';
+import { SuccessLogin } from './page/after_login/success_login';
+import './App.css'
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         {/* todo: head */}
-        <Home />
+        <Route exact path="/" component={Home} />
+        <Route path='/success_login' component={SuccessLogin}></Route>
       </Switch>
     </BrowserRouter>
   );

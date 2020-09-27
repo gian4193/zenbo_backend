@@ -67,6 +67,27 @@ def validate_login(request):
     else:
         return HttpResponse("please use GET")
 
+def get_patient_temperature(request):
+    if request.method == "GET":
+        try:
+            patient = request.GET['patient']
+            data = Patient_temperature.objects.filter(patient_id=patient)
+            result_arr = []
+            for index in range(0,len(data)):
+                if index > 29 :
+                    break
+                record = {
+                    "date" : str(data[index].create_date).split('.')[0],
+                    "temperature" : data[index].temperature
+                }
+                result_arr.append(record)
+            return JsonResponse(result_arr,safe=False)
+        except Exception as e:
+            print(e)
+            return HttpResponse("should include keyword")
+    else :
+        return HttpResponse("please use GET")
+
 
 
 
